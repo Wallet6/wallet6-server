@@ -33,6 +33,10 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+gem 'materialize-sass'
+gem 'material_icons' 
+gem 'jquery-rails'
+
 gem 'dalli'
 gem 'devise_token_auth'
 gem 'active_model_serializers'
