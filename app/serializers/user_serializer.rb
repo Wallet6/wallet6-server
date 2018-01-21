@@ -5,6 +5,8 @@ class UserSerializer < ActiveModel::Serializer
   attribute :address
   attribute :emission_allowance
   attribute :emission_usage
+  attribute :emission_total
+  attribute :total_distance
 
   attribute :address
 

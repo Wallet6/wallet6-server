@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-150.times do 
+100.times do 
   u = User.create!(name: Faker::Name.name,
               email: Faker::Internet.unique.email,
               password: 'testing1',
@@ -20,8 +20,10 @@
 
   r = rand(3..8)
   r.times do
-    u.emission.create(distance: Faker::Number.between(1, 50),
-                      emission: Faker::Number.between(1,100),
-                      created_at: Faker::Date.between(5.days.ago, Date.today))
+    m = u.emission.create(distance: Faker::Number.between(1, 50),
+                          emission: Faker::Number.between(1,100),
+                          created_at: Faker::Date.between(5.days.ago, Date.today))
+
+    u.update_attributes!(emission_total: u.emission_total + m.emission, total_distance: u.total_distance + m.distance)
   end
 end
