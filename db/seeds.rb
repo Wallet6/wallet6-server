@@ -14,13 +14,14 @@
               street: Faker::Address.street_address,
               city: Faker::Address.city,
               state: Faker::Address.state,
-              country: Faker::Address.country) 
+              country: 'United States',
+              emission_allowance: rand(0..5),
+              emission_usage: rand(0..5)) 
 
   r = rand(3..8)
   r.times do
-    Emission.create(user: u,
-                    distance: Faker::Number.between(1, 50),
-                    emission: Faker::Number.between(1,100),
-                    created_at: Faker::Date.between(5.days.ago, Date.today))
+    u.emission.create(distance: Faker::Number.between(1, 50),
+                      emission: Faker::Number.between(1,100),
+                      created_at: Faker::Date.between(5.days.ago, Date.today))
   end
 end

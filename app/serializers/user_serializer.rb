@@ -1,8 +1,14 @@
 class UserSerializer < ActiveModel::Serializer
-  attributes :id, :name, :email
+  attribute :id
+  attribute :name
+  attribute :email
   attribute :address
-  has_many :emission
+  attribute :emission_allowance
+  attribute :emission_usage
 
+  attribute :address
+
+  has_many :emission
 
   def address
     {
@@ -12,8 +18,5 @@ class UserSerializer < ActiveModel::Serializer
       country: object.country,
     }
   end
-
-
-
 
 end
