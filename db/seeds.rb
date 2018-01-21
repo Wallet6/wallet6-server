@@ -19,10 +19,12 @@
               emission_usage: rand(0..5)) 
 
   r = rand(3..8)
+  d = Date.today
   r.times do
     m = u.emission.create(distance: Faker::Number.between(1, 50),
                           emission: Faker::Number.between(1,100),
-                          created_at: Faker::Date.between(5.days.ago, Date.today))
+                          created_at: d)
+    d = d - 1.day 
 
     u.update_attributes!(emission_total: u.emission_total + m.emission, total_distance: u.total_distance + m.distance)
   end
