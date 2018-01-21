@@ -1,6 +1,7 @@
 class UserSerializer < ActiveModel::Serializer
   attributes :id, :name, :email
   attribute :address
+  has_many :emission
 
 
   def address
