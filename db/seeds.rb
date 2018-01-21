@@ -15,7 +15,7 @@
               city: Faker::Address.city,
               state: Faker::Address.state,
               country: 'United States',
-              emission_allowance: rand(0..5),
+              emission_allowance: 5,
               emission_usage: rand(0..5)) 
 
   r = rand(3..8)

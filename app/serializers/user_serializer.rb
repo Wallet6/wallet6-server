@@ -8,7 +8,7 @@ class UserSerializer < ActiveModel::Serializer
 
   attribute :address
 
-  has_many :emission
+  has_many :emission, key: "emission_history"
 
   def address
     {
