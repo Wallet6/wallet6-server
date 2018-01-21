@@ -1,0 +1,28 @@
+@import "materialize";
+
+
+#earth {
+  width: 800px;
+  right: -350px;
+  z-index: -999;
+  position: absolute;
+  top: 150px;
+}
+
+.brand-logo img {
+  height: 70px;
+  margin-top: -4px;
+}
+
+#index-banner {
+  height: 600px;
+  padding: 150px 0;
+}
+
+#download-button {
+  border-radius: 40px;
+}
+
+.page-footer img {
+  width: 240px;
+}
