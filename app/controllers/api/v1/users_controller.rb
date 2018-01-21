@@ -3,7 +3,7 @@ module Api::V1
 
     # GET /v1/users
     def index
-      respond_with Rails.cache.fetch("users") { User.limit(40) }
+      respond_with User.limit(40)
     end
 
     # GET /v1/users/{id}
